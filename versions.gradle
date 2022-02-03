@@ -1,0 +1,71 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+
+def build_versions = [:]
+build_versions.min_sdk = 23
+build_versions.target_sdk = 32
+build_versions.build_tools = "30.0.3"
+build_versions.versionCodeMyUserApp = 100001
+build_versions.versionNameMyUserApp =  "1.0.0"
+ext.build_versions = build_versions
+
+ext.deps = [:]
+def versions = [:]
+versions.kotlin = "1.4.10"
+versions.android_gradle_plugin = "4.1.2"
+versions.play_services_gradle_plugin = "4.2.0"
+versions.dagger =  "2.16"
+versions.lifecycle = "2.3.1"
+versions.core_ktx = "1.6.0"
+versions.appcompat = "1.3.0"
+versions.android_material = "1.4.0"
+versions.androidx_contraintLayout = "2.0.4"
+versions.androidx_junit = "1.1.3"
+versions.rxkotlin = "3.0.1"
+versions.rxjava = "2.2.9"
+versions.rxandroid = "2.0.1"
+versions.legacy_support = "1.0.0"
+
+def deps = [:]
+
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.play_services_gradle_plugin = "com.google.gms:google-services:$versions.play_services_gradle_plugin"
+deps.android_kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.androidx_core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+deps.androidx_appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+deps.android_material = "com.google.android.material:material:$versions.android_material"
+deps.androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.androidx_contraintLayout"
+deps.legacy_support = "androidx.legacy:legacy-support-v4:$versions.legacy_support"
+
+ext.deps = deps
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+deps.dagger = dagger
+
+def lifecycle = [:]
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def reactive = [:]
+reactive.rxjava =  "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+reactive.rxkotlin = "com.github.ReactiveX:RxKotlin:$versions.rxkotlin"
+reactive.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.reactive = reactive
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    handler.maven { url 'http://salesforce-marketingcloud.github.io/JB4A-SDK-Android/repository' }
+}
+ext.addRepos = this.&addRepos
+

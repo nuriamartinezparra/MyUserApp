@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.innocv.myapplication"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.versionCodeMyUserApp
+        versionName build_versions.versionNameMyUserApp
+    }
+
+    buildTypes {
+        debug {
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            }
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+        }
+    }
+
+    productFlavors {
+        MyUserApp {
+            versionCode build_versions.versionCodeMyUserApp
+            versionName build_versions.versionNameMyUserApp
+            dimension "app"
+        }
+
+        pre {
+            dimension "environment"
+        }
+
+        pro {
+            dimension "environment"
+        }
+
+        dev {
+            dimension "product"
+        }
+    }
+
+    flavorDimensions "app", "environment", "product"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation deps.androidx_core_ktx
+    implementation deps.androidx_appcompat
+    implementation deps.android_material
+    implementation deps.androidx_constraintlayout
+    implementation deps.legacy_support
+
+    //Dagger
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+
+    //Lifecycle
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.livedata
+
+    //RxKotlin && RxJava
+    implementation deps.reactive.rxkotlin
+    implementation deps.reactive.rxjava
+    implementation deps.reactive.rxandroid
+}
