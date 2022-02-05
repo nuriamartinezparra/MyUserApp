@@ -86,4 +86,11 @@ dependencies {
     implementation deps.reactive.rxkotlin
     implementation deps.reactive.rxjava
     implementation deps.reactive.rxandroid
+
+    //Retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.rxjava_adapter
+    implementation deps.retrofit.mock
+    implementation deps.okhttp_logging_interceptor
 }

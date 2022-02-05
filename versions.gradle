@@ -18,7 +18,9 @@ versions.android_gradle_plugin = "4.1.2"
 versions.play_services_gradle_plugin = "4.2.0"
 versions.dagger =  "2.16"
 versions.lifecycle = "2.3.1"
+versions.retrofit = "2.9.0"
 versions.core_ktx = "1.6.0"
+versions.okhttp_logging_interceptor = "4.9.1"
 versions.appcompat = "1.3.0"
 versions.android_material = "1.4.0"
 versions.androidx_contraintLayout = "2.0.4"
@@ -26,6 +28,7 @@ versions.androidx_junit = "1.1.3"
 versions.rxkotlin = "3.0.1"
 versions.rxjava = "2.2.9"
 versions.rxandroid = "2.0.1"
+versions.rxjava_adapter = "2.9.0"
 versions.legacy_support = "1.0.0"
 
 def deps = [:]
@@ -60,6 +63,14 @@ reactive.rxjava =  "io.reactivex.rxjava2:rxjava:$versions.rxjava"
 reactive.rxkotlin = "com.github.ReactiveX:RxKotlin:$versions.rxkotlin"
 reactive.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
 deps.reactive = reactive
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+retrofit.rxjava_adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.rxjava_adapter"
+deps.retrofit = retrofit
+deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_logging_interceptor}"
 
 static def addRepos(RepositoryHandler handler) {
     handler.google()
