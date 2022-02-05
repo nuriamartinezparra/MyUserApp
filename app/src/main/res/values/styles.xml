@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Font Styles -->
+
+    <!-- region OpenSans-Regular -->
+    <style name="CommonsOpenSansRegular">
+        <item name="android:fontFamily">@font/commons_opensans</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/textSize20</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region OpenSans-Bold -->
+    <style name="CommonsOpenSansBold">
+        <item name="android:fontFamily">@font/commons_opensans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/textSize20</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region OpenSans-Semibold -->
+    <style name="CommonsOpenSansSemibold">
+        <item name="android:fontFamily">@font/commons_opensans_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/textSize20</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region OpenSans-Italic -->
+    <style name="CommonsOpenSansItalic">
+        <item name="android:fontFamily">@font/commons_opensans_italic</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/textSize20</item>
+    </style>
+    <!-- endregion -->
+
+
+    <!-- Regular colors -->
+    <style name="CommonsOpenSansRegular.Primary" parent="CommonsOpenSansRegular">
+        <item name="android:textColor">@color/text_primary_color</item>
+    </style>
+    <style name="CommonsOpenSansRegular.Secondary" parent="CommonsOpenSansRegular">
+        <item name="android:textColor">@color/text_primary_dark_color</item>
+    </style>
+    <style name="CommonsOpenSansRegular.Accent" parent="CommonsOpenSansRegular">
+        <item name="android:textColor">@color/text_accent_color</item>
+    </style>
+    <style name="CommonsOpenSansRegular.Grey" parent="CommonsOpenSansRegular">
+        <item name="android:textColor">@color/grey_color</item>
+    </style>
+
+    <!-- Bold colors -->
+    <style name="CommonsOpenSansBold.Primary" parent="CommonsOpenSansBold">
+        <item name="android:textColor">@color/text_primary_color</item>
+    </style>
+    <style name="CommonsOpenSansBold.Secondary" parent="CommonsOpenSansBold">
+        <item name="android:textColor">@color/text_primary_dark_color</item>
+    </style>
+    <style name="CommonsOpenSansBold.Accent" parent="CommonsOpenSansBold">
+        <item name="android:textColor">@color/text_accent_color</item>
+    </style>
+    <style name="CommonsOpenSansBold.Grey" parent="CommonsOpenSansBold">
+        <item name="android:textColor">@color/grey_color</item>
+    </style>
+
+    <!-- Semibold colors -->
+    <style name="CommonsOpenSansSemibold.Primary" parent="CommonsOpenSansSemibold">
+        <item name="android:textColor">@color/text_primary_color</item>
+    </style>
+    <style name="CommonsOpenSansSemibold.Secondary" parent="CommonsOpenSansSemibold">
+        <item name="android:textColor">@color/text_primary_dark_color</item>
+    </style>
+    <style name="CommonsOpenSansSemibold.Accent" parent="CommonsOpenSansSemibold">
+        <item name="android:textColor">@color/text_accent_color</item>
+    </style>
+    <style name="CommonsOpenSansSemibold.Grey" parent="CommonsOpenSansSemibold">
+        <item name="android:textColor">@color/grey_color</item>
+    </style>
+
+    <!-- Italic colors -->
+    <style name="CommonsOpenSansItalic.Primary" parent="CommonsOpenSansItalic">
+        <item name="android:textColor">@color/text_primary_color</item>
+    </style>
+    <style name="CommonsOpenSansItalic.Secondary" parent="CommonsOpenSansItalic">
+        <item name="android:textColor">@color/text_primary_dark_color</item>
+    </style>
+    <style name="CommonsOpenSansItalic.Accent" parent="CommonsOpenSansItalic">
+        <item name="android:textColor">@color/text_accent_color</item>
+    </style>
+    <style name="CommonsOpenSansItalic.Grey" parent="CommonsOpenSansItalic">
+        <item name="android:textColor">@color/grey_color</item>
+    </style>
+
+</resources>
