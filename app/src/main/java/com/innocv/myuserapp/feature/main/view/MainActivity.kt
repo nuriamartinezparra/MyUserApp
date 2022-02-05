@@ -3,6 +3,7 @@ package com.innocv.myuserapp.feature.main.view
 import com.innocv.myuserapp.UserApplication
 import com.innocv.myuserapp.common.base.activity.BaseActivityFragmentScreen
 import com.innocv.myuserapp.databinding.ActivityMainBinding
+import com.innocv.myuserapp.feature.listuser.view.ListUserFragment
 import com.innocv.myuserapp.feature.main.viewmodel.MainViewModelInterface
 import javax.inject.Inject
 
@@ -27,6 +28,14 @@ class MainActivity : BaseActivityFragmentScreen() {
     override fun afterInject() {
         this.binding = ActivityMainBinding.inflate(this.layoutInflater)
         setContentView(this.binding.root)
+
+        //Add first fragment
+        this.currentFragment = ListUserFragment()
+        supportFragmentManager.beginTransaction()
+                .replace(binding.userFragment.id,
+                        this.currentFragment,
+                        this.currentFragment::class.java.simpleName)
+                .commitAllowingStateLoss()
     }
 
     override fun configureUI() {
